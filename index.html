@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+</head>
+<body>
+  <h1>Ajouter une todo</h1>
+  <form id="todoForm">
+    <label for="title">Titre:</label>
+    <input type="text" id="title" name="title" required>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea>
+    <label for="dueDate">Date d'échéance:</label>
+    <input type="date" id="dueDate" name="dueDate" required>
+    <label for="priority">Priorité:</label>
+    <select id="priority" name="priority">
+      <option value="not urgent">Pas urgent</option>
+      <option value="normal" selected>Normal</option>
+      <option value="urgent">Urgent</option>
+    </select>
+    <button type="submit">Ajouter</button>
+  </form>
+
+  <h1>Liste de todos</h1>
+  <ul id="todoList"></ul>
+  
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>
