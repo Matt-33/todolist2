@@ -1,26 +1,26 @@
 import { renderTodoList } from './todoList.js';
 import { editTodo } from './editTodo.js';
+import { todos } from '../app.js';
 
 function addTodo(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const title = document.getElementById('title').value;
-    const description = document.getElementById('description').value;
-    const dueDate = document.getElementById('dueDate').value;
-    const priority = document.getElementById('priority').value;
+  const title = document.getElementById('title').value;
+  const description = document.getElementById('description').value;
+  const dueDate = document.getElementById('dueDate').value;
+  const priority = document.getElementById('priority').value;
 
-    const todo = {
-        title: title,
-        description: description,
-        dueDate: dueDate,
-        priority: priority
-      };
+  const todo = {
+      id: Date.now(),
+      title: title,
+      description: description,
+      dueDate: dueDate,
+      priority: priority
+    };
 
-      console.log(todo);
-
-      alert('Todo ajoutée avec succès');
-      event.target.reset();
-      renderTodoList();
-    }
-
+  todos.push(todo); 
+  alert('Todo ajoutée avec succès');
+  event.target.reset();
+  renderTodoList(); 
+  }
     export { addTodo };
