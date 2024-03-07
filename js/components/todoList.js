@@ -9,19 +9,19 @@ function renderTodoList() {
   todos.forEach(todo => {
     const listItem = document.createElement('li');
     
-    // Création des éléments pour afficher les détails de la todo
+    // éléments pour afficher les détails de la todo
     const titleSpan = document.createElement('span');
     const descriptionPara = document.createElement('p');
     const dueDateSpan = document.createElement('span');
     const prioritySpan = document.createElement('span');
 
-    // Remplissage des éléments avec les détails de la todo
+    // Eléments avec les détails de la todo
     titleSpan.textContent = `Titre: ${todo.title}`;
     descriptionPara.textContent = `Description: ${todo.description}`;
     dueDateSpan.textContent = `Date d'échéance: ${todo.dueDate}`;
     prioritySpan.textContent = `Priorité: ${todo.priority}`;
 
-    // Création des boutons d'édition et de suppression
+    // boutons d'édition et de suppression
     const editButton = document.createElement('button');
     editButton.textContent = 'Modifier';
     editButton.addEventListener('click', () => editTodo(todo));
@@ -30,7 +30,6 @@ function renderTodoList() {
     deleteButton.textContent = 'Supprimer';
     deleteButton.addEventListener('click', () => deleteTodo(todo));
 
-    // Ajout des éléments à la liste d'affichage
     listItem.appendChild(titleSpan);
     listItem.appendChild(descriptionPara);
     listItem.appendChild(dueDateSpan);
